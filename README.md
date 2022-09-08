@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<hr />
 
-## Getting Started
+<div align="center">
+  <a href="#">
+    <img src="public/github.png" alt="tminus logo" height="100" >
+  </a>
+  <p>Um timer acessível, performático e preciso.</p>
+</div>
 
-First, run the development server:
+<hr />
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<div align="center">
+  <img src="https://img.shields.io/badge/VERCEL-000000?style=for-the-badge&logo=VERCEL&logoColor=FFFFFF" />
+  <img src="https://img.shields.io/badge/TYPESCRIPT-000000?style=for-the-badge&logo=TYPESCRIPT&logoColor=3178C6" />
+  <img src="https://img.shields.io/badge/NEXT.JS-000000?style=for-the-badge&logo=NEXTDOTJS&logoColor=FFFFFF" />
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br />
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<div align="center">
+  <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpeterfritz%2Ftminus&project-name=tminus&repo-name=tminus&demo-title=tminus&demo-description=Um%20timer%20acess%C3%ADvel%2C%20perform%C3%A1tico%20e%20preciso.&demo-url=https%3A%2F%2Ftminus.ptr.red%2F&demo-image=https%3A%2F%2Ftminus.ptr.red%2Fthumbnail.png"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
+</div>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+<br />
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<div align="center">
+<details>
+  <summary>
+    Desenvolvimento
+  </summary>
+  <div align="start">
+    <p>
+      Para desenvolver é só clonar o repositório usando <code>git clone https://github.com/peterfritz/tminus.git</code>, entrar na pasta do repositório clonado usando <code>cd tminus</code> e rodar usando <code>yarn dev</code> durante o desenvolvimento ou <code>yarn build && yarn start</code> para o ambiente de produção.
+    </p>
+  </div>
+</details>
+</div>
 
-## Learn More
+<br/>
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<div align="center">
+  <a href="https://ptr.red/readme" rel="noopener" target="_blank">
+  <img src="https://user-images.githubusercontent.com/61599784/189038952-158fa0dc-ffb8-49b5-87ac-6fe1a2256e0e.svg" alt="Made by Peter Fritz" height="30" />
+</div>

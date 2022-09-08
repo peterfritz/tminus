@@ -1,5 +1,5 @@
 {
-  "name": "countdown",
+  "name": "tminus",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,11 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@mantine/core": "^5.2.6",
+    "@mantine/form": "^5.2.6",
+    "@mantine/hooks": "^5.2.6",
+    "@mantine/modals": "^5.2.6",
+    "@mantine/notifications": "^5.2.6",
+    "@types/canvas-confetti": "^1.4.3",
+    "canvas-confetti": "^1.5.1",
+    "ms": "^3.0.0-canary.1",
     "next": "12.2.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
+    "@types/ms": "^0.7.31",
     "@types/node": "18.7.15",
     "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
