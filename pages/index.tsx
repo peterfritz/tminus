@@ -40,7 +40,7 @@ const Home: NextPage = () => {
   const [countdown, setCountdown] = useState("");
   const form = useForm({
     initialValues: {
-      time: "",
+      time: presetTimers[0].value,
     },
   });
 
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
           rightSection={
             <HoverCard width={280} shadow="md">
               <HoverCard.Target>
-                <ThemeIcon variant="light" color="dark" size="sm">
+                <ThemeIcon variant="outline" color="gray" size="sm">
                   <FaInfo size={10} />
                 </ThemeIcon>
               </HoverCard.Target>

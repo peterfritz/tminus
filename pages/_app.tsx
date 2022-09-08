@@ -48,7 +48,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           }}
           zIndex={1000}
         >
-          <Button variant="default" leftIcon={<FaGithub size={16} />}>
+          <Button
+            component="a"
+            href="https://github.com/peterfritz/tminus"
+            rel="noopener"
+            target="_blank"
+            variant="default"
+            leftIcon={<FaGithub size={16} />}
+          >
             GitHub
           </Button>
         </Affix>
