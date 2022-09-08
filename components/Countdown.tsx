@@ -1,5 +1,5 @@
 import confetti from "canvas-confetti";
-import { Affix, Button, Center, Group, Stack, Text } from "@mantine/core";
+import { Button, Center, Group, Stack, Text } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { animationInterval } from "../lib/time";
 import { useIdle } from "@mantine/hooks";
@@ -59,6 +59,7 @@ const Countdown: React.FC<Props> = ({ time, close }) => {
 
   useEffect(() => {
     const countdownController = new AbortController();
+    let interval: any;
 
     const updateCountdown = () => {
       const now = Date.now();
@@ -83,6 +84,7 @@ const Countdown: React.FC<Props> = ({ time, close }) => {
         handleEnd();
 
         countdownController.abort();
+        clearInterval(interval);
 
         return;
       }
@@ -92,9 +94,14 @@ const Countdown: React.FC<Props> = ({ time, close }) => {
       updateCountdown();
     });
 
+    interval = setInterval(() => {
+      updateCountdown();
+    }, 1000);
+
     updateCountdown();
 
     return () => {
+      clearInterval(interval);
       countdownController.abort();
     };
   }, [time]);

@@ -23,6 +23,7 @@ body,
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: #1a1b1e;
 }
 
 img,
