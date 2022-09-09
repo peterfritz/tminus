@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import type { StringValue } from "ms";
+import Head from "next/head";
 import { useEffect, useState } from "react";
+import { getHotkeyHandler } from "@mantine/hooks";
 import { FaInfo } from "react-icons/fa";
 import { useForm } from "@mantine/form";
 import ms from "ms";
@@ -8,17 +10,15 @@ import {
   Button,
   Center,
   Code,
-  HoverCard,
   Modal,
   SegmentedControl,
   Stack,
   Text,
   TextInput,
   ThemeIcon,
+  Tooltip,
 } from "@mantine/core";
 import Countdown from "../components/Countdown";
-import { getHotkeyHandler } from "@mantine/hooks";
-import Head from "next/head";
 
 const presetTimers = [
   {
@@ -94,19 +94,19 @@ const Home: NextPage = () => {
         />
         <TextInput
           rightSection={
-            <HoverCard width={280} shadow="md">
-              <HoverCard.Target>
-                <ThemeIcon variant="outline" color="gray" size="sm">
-                  <FaInfo size={10} />
-                </ThemeIcon>
-              </HoverCard.Target>
-              <HoverCard.Dropdown>
+            <Tooltip
+              withArrow
+              label={
                 <Text size="sm" align="center">
                   Formatos aceitos: <Code>30s</Code>, <Code>1m</Code>,{" "}
                   <Code>2.5h</Code>
                 </Text>
-              </HoverCard.Dropdown>
-            </HoverCard>
+              }
+            >
+              <ThemeIcon variant="outline" color="gray" size="sm">
+                <FaInfo size={10} />
+              </ThemeIcon>
+            </Tooltip>
           }
           autoComplete="off"
           {...form.getInputProps("time")}

@@ -37,11 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   return (
-    <MantineProvider
-      theme={{ colorScheme, fontFamily: "'Roboto Slab', serif" }}
-      withGlobalStyles
-      withNormalizeCSS
-    >
+    <MantineProvider theme={{ colorScheme }} withGlobalStyles withNormalizeCSS>
       <ModalsProvider>
         <Component {...pageProps} />
         <Affix

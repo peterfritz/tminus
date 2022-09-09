@@ -1,9 +1,20 @@
 import confetti from "canvas-confetti";
-import { Button, Center, Group, Stack, Text } from "@mantine/core";
+import {
+  ActionIcon,
+  Affix,
+  Button,
+  Center,
+  CopyButton,
+  Group,
+  Stack,
+  Text,
+  Tooltip,
+} from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { animationInterval } from "../lib/time";
 import { useIdle } from "@mantine/hooks";
 import { openConfirmModal } from "@mantine/modals";
+import { FaCopy } from "react-icons/fa";
 
 interface Props {
   time: string;
@@ -166,20 +177,55 @@ const Countdown: React.FC<Props> = ({ time, close }) => {
             {`0${remainingTime.seconds}`.slice(-2)}
           </Text>
         </Group>
-        <Button
-          variant="default"
-          sx={() => ({
-            transition: "opacity 0.5s",
-            opacity: idle ? 0 : 1,
-            "&:hover": {
-              opacity: 1,
-            },
-          })}
-          onClick={() => handleClose()}
-        >
-          {remainingTime.done ? "Fechar" : "Cancelar"}
-        </Button>
+        <Group>
+          <Button
+            variant="default"
+            sx={() => ({
+              transition: "opacity 0.5s",
+              opacity: idle ? 0 : 1,
+              "&:hover": {
+                opacity: 1,
+              },
+            })}
+            onClick={() => handleClose()}
+          >
+            {remainingTime.done ? "Fechar" : "Cancelar"}
+          </Button>
+        </Group>
       </Stack>
+      <Affix
+        position={{
+          bottom: 20,
+          right: 20,
+        }}
+      >
+        <CopyButton
+          value={`${
+            typeof location !== "undefined" && location.origin
+          }/timer/${encodeURIComponent(time)}`}
+        >
+          {({ copied, copy }) => (
+            <Tooltip
+              label={copied ? "Link copiado!" : "Copiar link para o timer"}
+            >
+              <ActionIcon
+                variant="default"
+                size="lg"
+                onClick={() => copy()}
+                sx={() => ({
+                  transition: "opacity 0.5s",
+                  opacity: idle ? 0 : 1,
+                  "&:hover": {
+                    opacity: 1,
+                  },
+                })}
+              >
+                <FaCopy />
+              </ActionIcon>
+            </Tooltip>
+          )}
+        </CopyButton>
+      </Affix>
     </Center>
   );
 };
