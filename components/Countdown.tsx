@@ -12,7 +12,11 @@ import {
 } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { animationInterval } from "../lib/time";
-import { useIdle } from "@mantine/hooks";
+import {
+  useDocumentTitle,
+  useDocumentVisibility,
+  useIdle,
+} from "@mantine/hooks";
 import { openConfirmModal } from "@mantine/modals";
 import { FaCopy } from "react-icons/fa";
 
@@ -32,6 +36,19 @@ const Countdown: React.FC<Props> = ({ time, close }) => {
     seconds: 0,
     done: false,
   });
+
+  const documentState = useDocumentVisibility();
+  useDocumentTitle(
+    documentState === "hidden"
+      ? `${
+          remainingTime.done
+            ? "Concluído"
+            : `${remainingTime.minutes}:${`0${remainingTime.seconds}`.slice(
+                -2
+              )}`
+        } | tminus`
+      : "tminus"
+  );
 
   const handleEnd = () => {
     soundEffect.play();
