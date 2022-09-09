@@ -1,0 +1,24 @@
+{
+  "short_name": "tminus",
+  "name": "tminus",
+  "description": "Um timer acessível, performático e preciso.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/?source=pwa",
+  "background_color": "#1971c2",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#1971c2",
+  "screenshots": [
+    {
+      "src": "/thumbnail.png",
+      "type": "image/png",
+      "sizes": "1200x630"
+    }
+  ]
+}

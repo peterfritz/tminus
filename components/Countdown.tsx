@@ -10,6 +10,8 @@ interface Props {
   close?: () => void;
 }
 
+let soundEffect: HTMLAudioElement;
+
 const Countdown: React.FC<Props> = ({ time, close }) => {
   const idle = useIdle(1000);
   const [remainingTime, setRemainingTime] = useState({
@@ -19,8 +21,6 @@ const Countdown: React.FC<Props> = ({ time, close }) => {
     seconds: 0,
     done: false,
   });
-
-  const soundEffect = new Audio("/game.wav");
 
   const handleEnd = () => {
     soundEffect.play();
@@ -60,6 +60,8 @@ const Countdown: React.FC<Props> = ({ time, close }) => {
   useEffect(() => {
     const countdownController = new AbortController();
     let interval: any;
+
+    soundEffect = soundEffect || new Audio("/game.wav");
 
     const updateCountdown = () => {
       const now = Date.now();
